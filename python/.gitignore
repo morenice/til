@@ -1,0 +1,6 @@
+*.pyc
+*.swp
+.ropeproject
+*egg-info
+.DS_Store
+

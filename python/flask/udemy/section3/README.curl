@@ -1,0 +1,3 @@
+curl -X GET http://127.0.0.1:5000/stores
+curl -X POST -H "Content-Type: application/json"  http://127.0.0.1:5000/store -d @store.post
+curl -X POST -H "Content-Type: application/json"  http://127.0.0.1:5000/store/new_store/item -d @store_item.post
