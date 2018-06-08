@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  dev:
+    image: morenice/cplusplus-boost-dev:latest
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/usr/local/src
+    
