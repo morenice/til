@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Spin loader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/spin.css" />
+  <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/spin.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <p>Press button, </p>
+    <button id="register-btn">Register</button>    
+    <div id="spin-loader" style="width: 40px; height: 5px; max-width: 40px; display: inline-block;"></div>
+    <div id="register-result"></div>
+  </div>
+
+  <script>
+    var opts = {
+      lines: 13, // The number of lines to draw
+      length: 38, // The length of each line
+      width: 17, // The line thickness
+      radius: 45, // The radius of the inner circle
+      scale: 0.1, // Scales overall size of the spinner
+      corners: 1, // Corner roundness (0..1)
+      // color: '#ffffff', // CSS color or array of colors
+      color: '#000000', // CSS color or array of colors
+      fadeColor: 'transparent', // CSS color or array of colors
+      speed: 1, // Rounds per second
+      rotate: 0, // The rotation offset
+      animation: 'spinner-line-fade-quick', // The CSS animation name for the lines
+      direction: 1, // 1: clockwise, -1: counterclockwise
+      zIndex: 2e9, // The z-index (defaults to 2000000000)
+      className: 'spinner', // The CSS class to assign to the spinner
+      top: '0%', // Top position relative to parent
+      left: '30%', // Left position relative to parent
+      shadow: '0 0 1px transparent', // Box-shadow for the lines
+      position: 'relative' // Element positioning
+    };
+
+    $("#register-btn").click(function () {
+      // First, Button disalbed.
+      $("#register-btn").prop("disabled", true);
+      $("#register-result").text("")
+
+      // Second, Spin loader 
+      var target = document.getElementById('spin-loader');
+      var spinner = new Spinner(opts).spin(target);
+
+      // After 5 seconds, Spinner will be stopped
+      var timer = setInterval(function () {
+        $("#register-btn").prop("disabled", false);
+        spinner.stop();
+        $("#register-result").text("Thanks for your registration.")
+        clearInterval(timer);
+      }, 5000);
+    });
+
+  </script>
+</body>
+
+</html>
