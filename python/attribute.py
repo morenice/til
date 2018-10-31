@@ -1,8 +1,16 @@
-
 class Cup(object):
     def __init__(self, name):
         self.name = name
         self.price = 0
+
+
+class MyClass:
+    pass
+
+
+def myfunc():
+    pass
+
 
 if __name__ == '__main__':
     cup1 = Cup('aaa')
@@ -23,6 +31,10 @@ if __name__ == '__main__':
 
     # set attribute
     setattr(cup2, 'new_name', 'default')
-    print(hasattr(cup2, 'new_name'))
+    print(hasattr(cup2, 'new_name'), end='\n\n')
 
-    print('done')
+    # access class attribute
+    obj = MyClass()
+    print(obj.__class__.__name__)
+    print(myfunc.__name__)
+
