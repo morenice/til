@@ -1,3 +1,6 @@
+import json
+
+
 def basic():
     len('aaaa')
     str(1)
@@ -18,6 +21,16 @@ def dict_to_str():
     d2 = eval(d1_str)
     if d1 == d2:
         print('eval function')
+
+def dict_to_str2():
+    print('dict to str 2')
+    d1 = {'a':1, 'b':'string'}
+    d1_str = json.dumps(d1)
+    print(d1_str)
+
+    d2 = json.loads(d1_str)
+    if d1 == d2:
+        print('json function')
 
 
 def split():
@@ -52,15 +65,21 @@ def index():
 
 def formating():
     # python3: format
+    name = 'Roll'
+    age = 20
+    '{0}: {1}'.format(name, age)
 
     # python 3.6: f-string
-    pass
+    name2 = 'Kell'
+    age2 = 40
+    f'{name2}: {age2}'
 
 
 if __name__ == '__main__':
     print('This is ' + 'string' + ' example')
     basic()
     dict_to_str()
+    dict_to_str2()
     split()
     join()
     index()
