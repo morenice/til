@@ -1,1 +1,3 @@
-php 7.0 upper
+* php > 7
+* composer
+
