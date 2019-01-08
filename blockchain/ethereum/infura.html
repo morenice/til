@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Infura</title>
+    </head>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" charset="utf-8">
+       //var web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/"));
+       //var web3 = new Web3(new Web3.providers.WebsocketProvider("wss://rinkeby.infura.io/_ws"));
+       var web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/"));
+
+       console.log(web3);
+       console.log(web3.eth.getBlock(1000));
+
+       var abi = '';
+       var address = '0x...';
+
+       contract1 = new web3.eth.Contract(abi, address);
+       //contract1.methods.totalSupply().call().then(console.log);
+    </script>
+    <body>
+
+    </body>
+</html>
