@@ -1,0 +1,26 @@
+{
+  "name": "ping-pong",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "ganache-cli": "^6.2.5",
+    "solium": "^1.2.1",
+    "truffle": "^5.0.1",
+    "truffle-flattener": "^1.2.10",
+    "truffle-hdwallet-provider": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha",
+    "check": "node_modules/.bin/solium",
+    "truffle": "node_modules/.bin/truffle",
+    "local": "node_modules/.bin/ganache-cli",
+    "flat": "node_modules/.bin/truffle-flattener"
+  },
+  "author": "",
+  "license": "ISC"
+}

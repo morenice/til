@@ -1,4 +1,5 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.5.0;
+
 
 /**
  * @title SafeMath
@@ -64,35 +65,35 @@ library SafeMath {
   }
 }
 
+
 /**
  * @title PingPong
  * @dev ping pong wei
  */
 contract PingPong {
   using SafeMath for uint256;
-  uint256 _count;
-  address _owner;
+  uint256 private _total = 0;
+  mapping (address => uint256) private _usersUsage;
+  address private _owner;
 
   event Pong(address indexed account, uint256 value);
 
   constructor() public {
-    _count = 0;
     _owner = msg.sender;
   }
 
   function () external payable {
-      msg.sender.transfer(msg.value);
-      emit Pong(msg.sender, msg.value);
-
-      _count = _count.add(1);
+    _total = _total.add(1);
+    _usersUsage[msg.sender] = _usersUsage[msg.sender].add(1);
+    msg.sender.transfer(msg.value);
+    emit Pong(msg.sender, msg.value);
   }
 
-  function owner() public returns (address) {
+  function owner() public view returns (address) {
     return _owner;
   }
 
-  function total() public returns (uint) {
-    return _count;
+  function total() public view returns (uint) {
+    return _total;
   }
 }
-
