@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  web:
+    image: python:3.7
+    volumes:
+      - .:/app
+    ports:
+     - 8000:8000
+    tty: true
+    stdin_open: true
+  db:
+    image: postgres:10.6
+    ports:
+      - 5432:5432
+    volumes:
+      - "web_volume"
