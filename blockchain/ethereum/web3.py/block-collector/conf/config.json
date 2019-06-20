@@ -1,0 +1,28 @@
+{
+  "prod": {
+    "web3": {
+      "httpProvider": "https://mainnet.infura.io/",
+      "websocketProvider": "wss://mainnet.infura.io/_ws"
+    },
+    "database": {
+      "host": "",
+      "port": 3306,
+      "database": "",
+      "user": "",
+      "password": ""
+    }
+  },
+  "dev": {
+    "web3": {
+      "httpProvider": "https://rinkeby.infura.io/",
+      "websocketProvider": "wss://rinkeby.infura.io/_ws"
+    },
+    "database": {
+      "host": "",
+      "port": 3306,
+      "database": "",
+      "user": "",
+      "password": ""
+    }
+  }
+}

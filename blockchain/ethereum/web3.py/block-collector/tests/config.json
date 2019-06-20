@@ -1,0 +1,25 @@
+{
+  "prod": {
+    "web3": {
+      "httpProvider": "https://mainnet.infura.io/",
+      "websocketProvider": "wss://mainnet.infura.io/_ws",
+      "apiKey": "123456789000000"
+    }
+  },
+  "dev": {
+    "web3": {
+      "httpProvider": "https://mainnet.infura.io/",
+      "websocketProvider": "wss://mainnet.infura.io/_ws",
+      "apiKey": "zzz111ooooo1aaa"
+    },
+    "databases": {
+      "mongodb": {
+        "host": "172.16.238.110",
+        "port": 27017,
+        "database": "dapps",
+        "user": "admin",
+        "password": "!@34"
+      }
+    }
+  }
+}
