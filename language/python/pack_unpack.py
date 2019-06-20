@@ -1,35 +1,34 @@
-def test_arg(*args, **kwargs):
-    # *args is tuple
-    # **kwargs is key-value dict
-    print(f'args: {args}')
-    print(f'kwargs: {kwargs}', end='\n\n')
+def pack_function():
+    def func1(*args, **kwargs):
+        # *args is tuple
+        # **kwargs is key-value dict
+        print(f'args: {args}')
+        print(f'kwargs: {kwargs}', end='\n\n')
 
-
-def arg_pack_function():
     # *args
-    print('test_arg(1,2,3)')
-    test_arg(1,2,3)
+    print('func1(1,2,3)')
+    func1(1,2,3)
 
     # **kwargs case1
-    print('test_arg(a=1, b=2)')
-    test_arg(a=1, b=2)
+    print('func1(a=1, b=2)')
+    func1(a=1, b=2)
 
     # **kwargs case2
     dic = dict()
     dic['a'] = 1
     dic['b'] = 2
 
-    print('test_arg(dic)')
-    test_arg(dic)
+    print('func1(dic)')
+    func1(dic)
 
-    print('test_arg(**dic)')
-    test_arg(**dic)
+    print('func1(**dic)')
+    func1(**dic)
 
     a = [1, 2, 3]
-    print('test_arg(*list)')
-    test_arg(*a)
-    print('test_arg(list)')
-    test_arg(a)
+    print('func1(*list)')
+    func1(*a)
+    print('func1(list)')
+    func1(a)
 
 
 def pack_unpack1():
@@ -46,6 +45,30 @@ def pack_unpack1():
     print(f'd = {d}')
 
 
+def example_count_all_element():
+    print('count all element ...')
+
+    a = [1,2,3,4,5]
+    b = [[1,2,3],[4,5,6],[7,8]]
+    c = [[[1,2,3],[4,5,6],[7]],[4,5,6],[[1],[5,6,7]]]
+    d = ['a', [1,'b',99], 'c']
+
+    def count(*args):
+        try:
+            iter(args)
+        except TypeError:
+            return len(args)
+
+        return sum([count(*arg) for arg in args])
+
+    # a=>5, b=>8, c=>12, d=>5
+    print(count(a))
+    print(count(b))
+    print(count(c))
+    #print(count(d))
+
+
 if __name__ == "__main__":
-    arg_pack_function()
+    pack_function()
     pack_unpack1()
+    example_count_all_element()
