@@ -13,7 +13,7 @@ def basic():
 
 def dict_to_str():
     print('dict to str')
-    d1 = {'a':1, 'b':'string'}
+    d1 = {'a': 1, 'b': 'string'}
     d1_str = str(d1)
     print(d1_str)
 
@@ -24,7 +24,7 @@ def dict_to_str():
 
 def dict_to_str2():
     print('dict to str 2')
-    d1 = {'a':1, 'b':'string'}
+    d1 = {'a': 1, 'b': 'string'}
     d1_str = json.dumps(d1)
     print(d1_str)
 
@@ -67,12 +67,16 @@ def formating():
     # python3: format
     name = 'Roll'
     age = 20
-    '{0}: {1}'.format(name, age)
+    print('{0}: {1}'.format(name, age))
 
     # python 3.6: f-string
     name2 = 'Kell'
     age2 = 40
-    f'{name2}: {age2}'
+    print(f'{name2}: {age2}')
+
+    # python 3.6: f-string
+    name3 = 'Paul Kim 22'
+    print(f'{name3.split()}')
 
 
 if __name__ == '__main__':
