@@ -52,6 +52,23 @@ References
 
 * <https://adoptopenjdk.net/>
 
+## Immediately Run with java command
+
+```java
+package javatutorial;
+
+class HelloWorld{
+    public static void main(String[] args) {
+        System.out.println("hello world");
+    }
+}
+```
+
+```shell
+java HelloWorld.java
+hello world
+```
+
 ## Setting gradle
 
 ### gradle wrapper
